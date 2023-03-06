@@ -252,7 +252,7 @@ sed -i -e '/^#.*/d' -e '/^$/d' conf/local.conf
 sed -e "s,MACHINE ??=.*,MACHINE ??= '$MACHINE',g" -i conf/local.conf
 
 # Input command
-echo "ENABLE_UART=\"1\"" >> conf/local.conf
+echo "ENABLE_UART = \"1\"" >> conf/local.conf
 
 prompt_message
 cd ${PROJECT_DIR}
