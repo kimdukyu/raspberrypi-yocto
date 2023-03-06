@@ -251,6 +251,9 @@ sed -i -e '/^#.*/d' -e '/^$/d' conf/local.conf
 # Change settings according to the environment
 sed -e "s,MACHINE ??=.*,MACHINE ??= '$MACHINE',g" -i conf/local.conf
 
+# Input command
+echo "ENABLE_UART=\"1\"" >> conf/local.conf
+
 prompt_message
 cd ${PROJECT_DIR}
 clean_up
