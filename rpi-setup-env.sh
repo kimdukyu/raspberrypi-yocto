@@ -254,8 +254,6 @@ sed -e "s,MACHINE ??=.*,MACHINE ??= '$MACHINE',g" -i conf/local.conf
 # Aeeded raspberrypi build option
 if [ -z $(sed -n "/ENABLE_UART/p" conf/local.conf) ]; then
     echo "ENABLE_UART = \"1\"" >> conf/local.conf                                                                                                                                                                                                                           
-else
-    echo ""
 fi
 
 prompt_message
