@@ -251,8 +251,12 @@ sed -i -e '/^#.*/d' -e '/^$/d' conf/local.conf
 # Change settings according to the environment
 sed -e "s,MACHINE ??=.*,MACHINE ??= '$MACHINE',g" -i conf/local.conf
 
-# Input command
-echo "ENABLE_UART = \"1\"" >> conf/local.conf
+# Aeeded raspberrypi build option
+if [ -z $(sed -n "/ENABLE_UART/p" conf/local.conf) ]; then
+    echo "ENABLE_UART = \"1\"" >> conf/local.conf                                                                                                                                                                                                                           
+else
+    echo ""
+fi
 
 prompt_message
 cd ${PROJECT_DIR}
